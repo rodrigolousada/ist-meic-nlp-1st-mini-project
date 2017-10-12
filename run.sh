@@ -61,10 +61,14 @@ fstcompile --isymbols=syms.sym --osymbols=syms.sym transdutor3_final.txt | fstar
 fstdraw    --isymbols=syms.sym --osymbols=syms.sym --portrait transdutor3_final.fst | dot -Tpdf  > transdutor3_final.pdf
 
 #################
-#Descodificador
+#Codificador
 fstarcsort --sort_type=ilabel transdutor1.fst > transdutor1sort.fst
-fstintersect transdutor1sort.fst transdutor2_final.fst > r.fst 
-fstdraw    --isymbols=syms.sym --osymbols=syms.sym --portrait r.fst | dot -Tpdf  > r.pdf
+fstcompose transdutor1sort.fst transdutor2_final.fst > transdutor1_2.fst
+fstdraw    --isymbols=syms.sym --osymbols=syms.sym --portrait transdutor1_2.fst | dot -Tpdf  > transdutor1_2.pdf
+
+fstcompose transdutor1_2.fst transdutor3_final.fst | fstarcsort > tranducer_cod.fst
+fstdraw    --isymbols=syms.sym --osymbols=syms.sym --portrait tranducer_cod.fst | dot -Tpdf  > tranducer_cod.pdf
+
 
 
 
@@ -72,19 +76,27 @@ fstdraw    --isymbols=syms.sym --osymbols=syms.sym --portrait r.fst | dot -Tpdf 
 #################
 #################
 #Testes
-#teste 1o transdutor
+
+# gerar Testes
+python word2fst.py 99_aa_ > test_99_aa_.txt
+fstcompile --isymbols=syms.sym --osymbols=syms.sym  test_99_aa_.txt | fstarcsort > test_99_aa_.fst
+
+
+
 fstcompile --isymbols=syms.sym --osymbols=syms.sym  99.txt | fstarcsort > 99.fst
 
-fstcompose 99.fst transdutor1.fst > XCIX.fst
-fstdraw    --isymbols=syms.sym --osymbols=syms.sym --portrait XCIX.fst | dot -Tpdf  > XCIX.pdf
+
+#teste 1o transdutor
+fstcompose test_99_aa_.fst transdutor1.fst > result_XCIX_aa_.fst
+fstdraw    --isymbols=syms.sym --osymbols=syms.sym --portrait XCIX_aa_.fst | dot -Tpdf  > XCIX_aa_.pdf
+
 
 # teste 2o transdutor
-fstcompile --isymbols=syms.sym --osymbols=syms.sym  XCIX_trans2.txt | fstarcsort > XCIX_trans2.fst
 
-fstcompose XCIX_trans2.fst transdutor2_final.fst > 3513.fst
-fstdraw    --isymbols=syms.sym --osymbols=syms.sym --portrait 3513.fst | dot -Tpdf  > 3513.pdf
+# testes 3o transdutor
 
-
+# testes Codificador
 
 
-####
+
+#################
