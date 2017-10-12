@@ -1,4 +1,5 @@
 #!/bin/bash
 
+# Cleaning all generated files
 rm *.fst *.pdf test_* result_*
-rm letras_transdutor.txt transdutor2_final.txt transdutor3_final.txt
+rm letters_transducer.txt transducer2_final.txt transducer3_final.txt
