@@ -81,19 +81,58 @@ fstdraw    --isymbols=syms.sym --osymbols=syms.sym --portrait tranducer_cod.fst 
 python word2fst.py 99_aa_ > test_99_aa_.txt
 fstcompile --isymbols=syms.sym --osymbols=syms.sym  test_99_aa_.txt | fstarcsort > test_99_aa_.fst
 
+python word2fst.py 99_ > test_99_.txt
+fstcompile --isymbols=syms.sym --osymbols=syms.sym  test_99_.txt | fstarcsort > test_99_.fst
 
+python word2fst.py batata_28_ > test_batata_28_.txt
+fstcompile --isymbols=syms.sym --osymbols=syms.sym  test_batata_28_.txt | fstarcsort > test_batata_28_.fst
 
-fstcompile --isymbols=syms.sym --osymbols=syms.sym  99.txt | fstarcsort > 99.fst
+python word2fst.py ir_tambem_ > test_ir_tambem_.txt
+fstcompile --isymbols=syms.sym --osymbols=syms.sym  test_ir_tambem_.txt | fstarcsort > test_ir_tambem_.fst
+
 
 
 #teste 1o transdutor
 fstcompose test_99_aa_.fst transdutor1.fst > result_XCIX_aa_.fst
-fstdraw    --isymbols=syms.sym --osymbols=syms.sym --portrait XCIX_aa_.fst | dot -Tpdf  > XCIX_aa_.pdf
+fstdraw    --isymbols=syms.sym --osymbols=syms.sym --portrait result_XCIX_aa_.fst | dot -Tpdf  > result_XCIX_aa_.pdf
+
+fstcompose test_99_.fst transdutor1.fst > result_XCIX_.fst
+fstdraw    --isymbols=syms.sym --osymbols=syms.sym --portrait result_XCIX_.fst | dot -Tpdf  > result_XCIX_.pdf
+
+fstcompose test_batata_28_.fst transdutor1.fst > result_batata_XXVIII_.fst
+fstdraw    --isymbols=syms.sym --osymbols=syms.sym --portrait result_batata_XXVIII_.fst | dot -Tpdf  > result_batata_XXVIII_.pdf
+
+fstcompose test_ir_tambem_.fst transdutor1.fst > result_ir_tambem_trans1.fst
+fstdraw    --isymbols=syms.sym --osymbols=syms.sym --portrait result_ir_tambem_trans1.fst | dot -Tpdf  > result_ir_tambem_trans1.pdf
 
 
 # teste 2o transdutor
+fstcompose result_XCIX_aa_.fst transdutor2_final.fst > result_3513_aa_.fst
+fstdraw    --isymbols=syms.sym --osymbols=syms.sym --portrait result_3513_aa_.fst | dot -Tpdf  > result_3513_aa_.pdf
+
+fstcompose result_XCIX_.fst transdutor2_final.fst > result_3513_.fst
+fstdraw    --isymbols=syms.sym --osymbols=syms.sym --portrait result_3513_.fst | dot -Tpdf  > result_3513_.pdf
+
+fstcompose result_batata_XXVIII_.fst transdutor2_final.fst > result_batata_332111_.fst
+fstdraw    --isymbols=syms.sym --osymbols=syms.sym --portrait result_batata_332111_.fst | dot -Tpdf  > result_batata_332111_.pdf
+
+fstcompose result_ir_tambem_trans1.fst transdutor2_final.fst > result_ir_tambem_trans2.fst
+fstdraw    --isymbols=syms.sym --osymbols=syms.sym --portrait result_ir_tambem_trans1.fst | dot -Tpdf  > result_ir_tambem_trans1.pdf
+
 
 # testes 3o transdutor
+fstcompose result_3513_aa_.fst transdutor3_final.fst > result_3513_XX_.fst
+fstdraw    --isymbols=syms.sym --osymbols=syms.sym --portrait result_3513_XX_.fst | dot -Tpdf  > result_3513_XX_.pdf
+
+fstcompose result_3513_.fst transdutor3_final.fst > result_3513_1.fst
+fstdraw    --isymbols=syms.sym --osymbols=syms.sym --portrait result_3513_1.fst | dot -Tpdf  > result_3513_1.pdf
+
+fstcompose result_batata_332111_.fst transdutor3_final.fst > result_bXtXtX_332111_.fst
+fstdraw    --isymbols=syms.sym --osymbols=syms.sym --portrait result_bXtXtX_332111_.fst | dot -Tpdf  > result_bXtXtX_332111_.pdf
+
+fstcompose result_ir_tambem_trans2.fst transdutor3_final.fst > result_Vr_tX79m_.fst
+fstdraw    --isymbols=syms.sym --osymbols=syms.sym --portrait result_Vr_tX79m_.fst | dot -Tpdf  > result_Vr_tX79m_.pdf
+
 
 # testes Codificador
 
