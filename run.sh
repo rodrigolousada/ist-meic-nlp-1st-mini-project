@@ -115,6 +115,8 @@ fstcompile --isymbols=syms.sym --osymbols=syms.sym  tests/test_bXtXtX_332111_.tx
 python word2fst.py Vr_tX79m_ > tests/test_Vr_tX79m_.txt
 fstcompile --isymbols=syms.sym --osymbols=syms.sym  tests/test_Vr_tX79m_.txt | fstarcsort > tests/test_Vr_tX79m_.fst
 
+python word2fst.py iiimmmbii_iirirriiri_ > tests/test_iiimmmbii_iirirriiri_.txt
+fstcompile --isymbols=syms.sym --osymbols=syms.sym  tests/test_iiimmmbii_iirirriiri_.txt | fstarcsort > tests/test_iiimmmbii_iirirriiri_.fst
 
 #################### Testing Transducer 1 ####################
 fstcompose tests/test_99_.fst transducers/transducer1.fst | fstrmepsilon > results/result_t1_XCIX_.fst
@@ -157,6 +159,8 @@ fstdraw    --isymbols=syms.sym --osymbols=syms.sym --portrait results/result_t3_
 fstcompose results/result_t2_ir_tambem_.fst transducers/transducer3_final.fst | fstrmepsilon > results/result_t3_Vr_tX79m_.fst
 fstdraw    --isymbols=syms.sym --osymbols=syms.sym --portrait results/result_t3_Vr_tX79m_.fst | dot -Tpdf  > results/result_t3_Vr_tX79m_.pdf
 
+fstcompose tests/test_iiimmmbii_iirirriiri_.fst transducers/transducer3_final.fst | fstrmepsilon > results/result_t3_LLLmm7LL_LVrVrrLVrL_.fst
+fstdraw    --isymbols=syms.sym --osymbols=syms.sym --portrait results/result_t3_LLLmm7LL_LVrVrrLVrL_.fst | dot -Tpdf  > results/result_t3_LLLmm7LL_LVrVrrLVrL_.pdf
 
 ################# Testing Codifier Transducer ################
 fstcompose tests/test_99_aa_.fst transducers/tranducer_cod.fst | fstrmepsilon > results/result_cod_3513_XX_.fst
@@ -183,6 +187,5 @@ fstdraw    --isymbols=syms.sym --osymbols=syms.sym --portrait results/result_dec
 
 fstcompose tests/test_Vr_tX79m_.fst transducers/tranducer_decod.fst | fstrmepsilon > results/result_decod_ir_tambem.fst
 fstdraw    --isymbols=syms.sym --osymbols=syms.sym --portrait results/result_decod_ir_tambem.fst | dot -Tpdf  > results/result_decod_ir_tambem.pdf
-
 
 ##############################################################

@@ -1,24 +1,26 @@
 0    1    eps         eps
-1    1    [^aeioum]   =
+1    0    _           _
+1    1    [^aeioum_]  =
 1    1    a           X
 1    1    e           9
 1    1    o           0
 1    1    u           8
 
-1    2    m           eps
-2    1    b           7
+1    2    eps         eps
+2    3    m           eps
+3    1    b           7
 
-1    3    m           m
-3    1    [^b_]       =
-3    0    _           _
+2    4    m           m
+4    1    [^bm_]     =
+4    2    eps         eps
+4    0    _           _
 
+1    5    eps         eps
+5    7    i           V
+7    1    r           r
 
-1    4    i           V
-4    1    r           r
-
-1    5    i           L
-5    1    [^r_]       =
-5    0    _           _
-
-1    0    _           _
+5    6    i           L
+6    1    [^ri_]     =
+6    5    eps         eps
+6    0    _           _
 0
