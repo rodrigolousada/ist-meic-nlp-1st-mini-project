@@ -117,45 +117,45 @@ fstcompile --isymbols=syms.sym --osymbols=syms.sym  tests/test_Vr_tX79m_.txt | f
 
 
 #################### Testing Transducer 1 ####################
-fstcompose tests/test_99_.fst transducers/transducer1.fst | fstrmepsilon > results/result_XCIX_.fst
-fstdraw    --isymbols=syms.sym --osymbols=syms.sym --portrait results/result_XCIX_.fst | dot -Tpdf  > results/result_XCIX_.pdf
+fstcompose tests/test_99_.fst transducers/transducer1.fst | fstrmepsilon > results/result_t1_XCIX_.fst
+fstdraw    --isymbols=syms.sym --osymbols=syms.sym --portrait results/result_t1_XCIX_.fst | dot -Tpdf  > results/result_t1_XCIX_.pdf
 
-fstcompose tests/test_99_aa_.fst transducers/transducer1.fst | fstrmepsilon > results/result_XCIX_aa_.fst
-fstdraw    --isymbols=syms.sym --osymbols=syms.sym --portrait results/result_XCIX_aa_.fst | dot -Tpdf  > results/result_XCIX_aa_.pdf
+fstcompose tests/test_99_aa_.fst transducers/transducer1.fst | fstrmepsilon > results/result_t1_XCIX_aa_.fst
+fstdraw    --isymbols=syms.sym --osymbols=syms.sym --portrait results/result_t1_XCIX_aa_.fst | dot -Tpdf  > results/result_t1_XCIX_aa_.pdf
 
-fstcompose tests/test_batata_28_.fst transducers/transducer1.fst | fstrmepsilon > results/result_batata_XXVIII_.fst
-fstdraw    --isymbols=syms.sym --osymbols=syms.sym --portrait results/result_batata_XXVIII_.fst | dot -Tpdf  > results/result_batata_XXVIII_.pdf
+fstcompose tests/test_batata_28_.fst transducers/transducer1.fst | fstrmepsilon > results/result_t1_batata_XXVIII_.fst
+fstdraw    --isymbols=syms.sym --osymbols=syms.sym --portrait results/result_t1_batata_XXVIII_.fst | dot -Tpdf  > results/result_t1_batata_XXVIII_.pdf
 
-fstcompose tests/test_ir_tambem_.fst transducers/transducer1.fst | fstrmepsilon > results/result_ir_tambem_trans1.fst
-fstdraw    --isymbols=syms.sym --osymbols=syms.sym --portrait results/result_ir_tambem_trans1.fst | dot -Tpdf  > results/result_ir_tambem_trans1.pdf
+fstcompose tests/test_ir_tambem_.fst transducers/transducer1.fst | fstrmepsilon > results/result_t1_ir_tambem_.fst
+fstdraw    --isymbols=syms.sym --osymbols=syms.sym --portrait results/result_t1_ir_tambem_.fst | dot -Tpdf  > results/result_t1_ir_tambem_.pdf
 
 
 #################### Testing Transducer 2 ####################
-fstcompose results/result_XCIX_aa_.fst transducers/transducer2_final.fst | fstrmepsilon > results/result_3513_aa_.fst
-fstdraw    --isymbols=syms.sym --osymbols=syms.sym --portrait results/result_3513_aa_.fst | dot -Tpdf  > results/result_3513_aa_.pdf
+fstcompose results/result_t1_XCIX_aa_.fst transducers/transducer2_final.fst | fstrmepsilon > results/result_t2_3513_aa_.fst
+fstdraw    --isymbols=syms.sym --osymbols=syms.sym --portrait results/result_t2_3513_aa_.fst | dot -Tpdf  > results/result_t2_3513_aa_.pdf
 
-fstcompose results/result_XCIX_.fst transducers/transducer2_final.fst | fstrmepsilon > results/result_3513_.fst
-fstdraw    --isymbols=syms.sym --osymbols=syms.sym --portrait results/result_3513_.fst | dot -Tpdf  > results/result_3513_.pdf
+fstcompose results/result_t1_XCIX_.fst transducers/transducer2_final.fst | fstrmepsilon > results/result_t2_3513_.fst
+fstdraw    --isymbols=syms.sym --osymbols=syms.sym --portrait results/result_t2_3513_.fst | dot -Tpdf  > results/result_t2_3513_.pdf
 
-fstcompose results/result_batata_XXVIII_.fst transducers/transducer2_final.fst | fstrmepsilon > results/result_batata_332111_.fst
-fstdraw    --isymbols=syms.sym --osymbols=syms.sym --portrait results/result_batata_332111_.fst | dot -Tpdf  > results/result_batata_332111_.pdf
+fstcompose results/result_t1_batata_XXVIII_.fst transducers/transducer2_final.fst | fstrmepsilon > results/result_t2_batata_332111_.fst
+fstdraw    --isymbols=syms.sym --osymbols=syms.sym --portrait results/result_t2_batata_332111_.fst | dot -Tpdf  > results/result_t2_batata_332111_.pdf
 
-fstcompose results/result_ir_tambem_trans1.fst transducers/transducer2_final.fst | fstrmepsilon > results/result_ir_tambem_trans2.fst
-fstdraw    --isymbols=syms.sym --osymbols=syms.sym --portrait results/result_ir_tambem_trans1.fst | dot -Tpdf  > results/result_ir_tambem_trans1.pdf
+fstcompose results/result_t1_ir_tambem_.fst transducers/transducer2_final.fst | fstrmepsilon > results/result_t2_ir_tambem_.fst
+fstdraw    --isymbols=syms.sym --osymbols=syms.sym --portrait results/result_t2_ir_tambem_.fst | dot -Tpdf  > results/result_t2_ir_tambem_.pdf
 
 
 #################### Testing Transducer 3 ####################
-fstcompose results/result_3513_aa_.fst transducers/transducer3_final.fst | fstrmepsilon > results/result_3513_XX_.fst
-fstdraw    --isymbols=syms.sym --osymbols=syms.sym --portrait results/result_3513_XX_.fst | dot -Tpdf  > results/result_3513_XX_.pdf
+fstcompose results/result_t2_3513_aa_.fst transducers/transducer3_final.fst | fstrmepsilon > results/result_t3_3513_XX_.fst
+fstdraw    --isymbols=syms.sym --osymbols=syms.sym --portrait results/result_t3_3513_XX_.fst | dot -Tpdf  > results/result_t3_3513_XX_.pdf
 
-fstcompose results/result_3513_.fst transducers/transducer3_final.fst | fstrmepsilon > results/result_3513_1.fst
-fstdraw    --isymbols=syms.sym --osymbols=syms.sym --portrait results/result_3513_1.fst | dot -Tpdf  > results/result_3513_1.pdf
+fstcompose results/result_t2_3513_.fst transducers/transducer3_final.fst | fstrmepsilon > results/result_t3_3513_1.fst
+fstdraw    --isymbols=syms.sym --osymbols=syms.sym --portrait results/result_t3_3513_1.fst | dot -Tpdf  > results/result_t3_3513_1.pdf
 
-fstcompose results/result_batata_332111_.fst transducers/transducer3_final.fst | fstrmepsilon > results/result_bXtXtX_332111_.fst
-fstdraw    --isymbols=syms.sym --osymbols=syms.sym --portrait results/result_bXtXtX_332111_.fst | dot -Tpdf  > results/result_bXtXtX_332111_.pdf
+fstcompose results/result_t2_batata_332111_.fst transducers/transducer3_final.fst | fstrmepsilon > results/result_t3_bXtXtX_332111_.fst
+fstdraw    --isymbols=syms.sym --osymbols=syms.sym --portrait results/result_t3_bXtXtX_332111_.fst | dot -Tpdf  > results/result_t3_bXtXtX_332111_.pdf
 
-fstcompose results/result_ir_tambem_trans2.fst transducers/transducer3_final.fst | fstrmepsilon > results/result_Vr_tX79m_.fst
-fstdraw    --isymbols=syms.sym --osymbols=syms.sym --portrait results/result_Vr_tX79m_.fst | dot -Tpdf  > results/result_Vr_tX79m_.pdf
+fstcompose results/result_t2_ir_tambem_.fst transducers/transducer3_final.fst | fstrmepsilon > results/result_t3_Vr_tX79m_.fst
+fstdraw    --isymbols=syms.sym --osymbols=syms.sym --portrait results/result_t3_Vr_tX79m_.fst | dot -Tpdf  > results/result_t3_Vr_tX79m_.pdf
 
 
 ################# Testing Codifier Transducer ################
