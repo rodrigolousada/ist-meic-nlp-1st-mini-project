@@ -3,13 +3,15 @@ Natural Language Processing 1st Mini Project
 
 **Grupo 40:**
 - Sofia Aparício 81105
-- Rodrigo LOusada 81115
+- Rodrigo Lousada 81115
 
 **Explicação do funcionamento:**
-O script run.sh cria 3 pastas:
-Sendo enviado todos os testes para a pasta **tests**, todos os resultados para a pasta **results** e todos os transdutores para a pasta **transducer**. Por uma questão de cumprimento do enunciado são gerados os ficheiros pedidos com os nomes respectivos na directoria raiz.
+Existem 3 ficheiros que pode correr com o comando **sh**:
+ - **run.sh** - Cria as pastas transducers, tests e transducers onde colocará todos os ficheiros gerados. No final copia os ficheiros referidos no enunciado para a pasta raiz com os nomes pedidos.
+ - **tests.sh** - Gera mais testes que estarão na pasta tests com os respectivos resultados na pasta results
+ - **clean.sh** - Limpa todos os ficheiros gerados
 
-**Descrição da Solução:**
+**Descrição das Opções Tomadas:**
 O grupo optou por começar a fazer o transdutor de Romanos para Decimais, sendo mais simples a implementação deste que depois seria invertido para obter o Transdutor Romanos. Simplificando mais ainda, começamos por desenvolver 4 transdutores, Referente ao zero, às unidades, às dezenas e ao numero 100. Estes quatro foram então concatenados e unidos de forma a obter um transdutor que contemplasse todos e somente os números de 1 a 100. 
 
 (Colocar imagem?)
@@ -28,3 +30,8 @@ O transdutor 3 revela-se o mais dificil aplicando uma solução não determinist
 (Colocar imagem)
 
 O transdutor codificador é um simples compose entre os transdutor 1, 2 e 3 respectivamente, enquanto o transdutor descodificador resulta da inversão dos transdutores e respectivo compose pela ordem 3, 2 e 1.
+
+**Comentários à solução:**
+O grupo optou, tal como aconselhado, a criar uma solução que parte de transdutores pequenos e simples para serem usados em transdutores mais complexos através da utilização das FSTools leccionadas.
+O transdutor 3 acabou por ser o mais complexo a nivel de concepção "obrigando" a ser feito de uma vez para uma solução mais eficiente.
+
