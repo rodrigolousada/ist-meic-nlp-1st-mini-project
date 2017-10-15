@@ -14,8 +14,6 @@ Existem 3 ficheiros que pode correr com o comando **sh**:
 **Descrição das Opções Tomadas:**
 O grupo optou por começar a fazer o transdutor de Romanos para Decimais, sendo mais simples a implementação deste que depois seria invertido para obter o Transdutor Romanos. Simplificando mais ainda, começamos por desenvolver 4 transdutores, Referente ao zero, às unidades, às dezenas e ao numero 100. Estes quatro foram então concatenados e unidos de forma a obter um transdutor que contemplasse todos e somente os números de 1 a 100. 
 
-(Colocar imagem?)
-
 A necessidade de ter um transdutor apenas para o zero, deve-se ao facto do trandutor das unidades apenas poder contemplar o 0 caso já tenha sido lida uma dezena. Esta solução facilitaria-nos escalar assim a solução para o caso de aceitarmos numero de 0 a 999, evitar outputs como 00.
 
 Para obter o trandutor 1 acabamos por criar mais dois transdutores:
@@ -23,9 +21,9 @@ Para obter o trandutor 1 acabamos por criar mais dois transdutores:
  -um transdutor que aceita após receber o caracter _(underline)
 É obtido assim o transdutor 1 com a união entre o Transdutor Romanos, e o transdutor das letras com a posterior concatenação com o underline, e closure.
 
-O transdutor 2 é um simples transdutor que apenas vai para o estado final caso receba um underline, e que ao receber qualquer numero Romano o codifica.
+O transdutor 2 é um simples transdutor que apenas vai para o estado de aceitação caso receba um underline, e que ao receber qualquer numero Romano o codifica.
 
-O transdutor 3 revela-se o mais dificil aplicando uma solução não determinista para os casos de receber um m ou um i, Segundo o seguinte esboço:
+O transdutor 3 revela-se o mais desafiante, aplicando uma solução não determinista para os casos de receber um m ou um i, Segundo o seguinte esboço:
 
 (Colocar imagem)
 
