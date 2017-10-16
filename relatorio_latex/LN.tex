@@ -1,6 +1,6 @@
 \documentclass{article}
 \usepackage[utf8]{inputenc}
-\usepackage[top=0.80in, bottom=1.00in, left=1.5in, right=1.5in]{geometry}
+\usepackage[top=0.20in, bottom=0.80in, left=1.5in, right=1.5in]{geometry}
 \newcommand\tab[1][1cm]{\hspace*{#1}}
 
 
@@ -10,27 +10,28 @@
 \maketitle
 
 \subsection*{Explicação do funcionamento}
- Existem 3 ficheiros que pode correr com o comando \textbf{sh}:
+ Existem 3 tipos de ficheiros que podem correr com o comando \textbf{sh}:
  \begin{itemize}
-\item\textbf{run.sh} - Cria as pastas transducers, tests e transducers onde colocará todos os ficheiros gerados. No final copia os ficheiros referidos no enunciado para a pasta raiz com os nomes pedidos.
- \item\textbf{tests.sh} - Gera mais testes que estarão na pasta tests com os respectivos resultados na pasta results
- \item\textbf{clean.sh} - Limpa todos os ficheiros gerados
+\item\textbf{run.sh} - Cria as pastas result, tests e transducers onde irão ser colocados todos os ficheiros gerados. No final, copia os ficheiros referidos no enunciado para a pasta raiz com os nomes pedidos.
+ \item\textbf{tests.sh} - Gera mais testes que estarão na pasta tests com os respectivos resultados na pasta results.
+ \item\textbf{clean.sh} - Limpa todos os ficheiros gerados.
 \end{itemize}
+Poderá encontrar a solução dos e-mails codificados e descodificados na pasta results, após correr o comando \textbf{sh run.sh}.
 
 \subsection*{Descrição das Opções Tomadas e Comentários à solução}
-\tab O grupo optou por começar a fazer o transdutor de Romanos para Decimais, sendo mais simples a implementação deste que depois seria invertido para obter o Transdutor Romanos. Simplificando mais ainda, começamos por desenvolver 4 transdutores, Referente ao zero, às unidades, às dezenas e ao numero 100. Estes quatro foram então concatenados e unidos de forma a obter um transdutor que contemplasse todos e somente os números de 1 a 100. \\
-A necessidade de ter um transdutor apenas para o zero, deve-se ao facto do trandutor das unidades apenas poder contemplar o 0 caso já tenha sido lida uma dezena. Esta solução facilitaria-nos escalar assim a solução para o caso de aceitarmos numero de 0 a 999, evitar outputs como 00.\\
+\tab O grupo optou por começar a fazer o transdutor de Romanos para Decimais, sendo a sua implementação mais simples. Após implementada este foi invertido para obter o Transdutor Romanos. Simplificando mais ainda,  foram desenvolvidos 4 transdutores, referentes ao 0 (zero), às unidades, às dezenas e ao numero 100 (cem). Estes quatro foram então concatenados e unidos de forma a obter um transdutor que contemplasse todos e somente os números de 1(um) a 100 (cem). \\
+A necessidade de ter um transdutor apenas para o 0(zero), deve-se ao facto do trandutor das unidades apenas poder contemplar o 0 (zero) no caso de já ter lido uma dezena. Esta solução permite escalar assim a solução e, no caso de serem aceites números de 0 a 999, evitar outputs como 00.\\
 
-Para obter o trandutor 1 acabamos por criar mais dois transdutores: um trandutor que aceita todas as letras de a-z e um transdutor que aceita após receber o caracter \_(underline)\\
-É obtido assim o transdutor 1 com a união entre o Transdutor Romanos, e o transdutor das letras com a posterior concatenação com o underline, e closure.\\
+Para obter o trandutor 1 foram criados mais dois transdutores: um trandutor que aceita todas as letras de A-Z e um transdutor que aceita após receber o caracter \_(underline)\\
+É assim obtido assim o transdutor 1 com a união entre o Transdutor Romanos, e o transdutor das letras com a posterior concatenação com o \_(underline), e closure.\\
 
-O transdutor 2 é um simples transdutor que apenas vai para o estado de aceitação caso receba um underline, e que ao receber qualquer numero Romano o codifica.\\
+O transdutor 2 é um transdutor simples que vai apenas para o estado de aceitação caso receba um \_(underline). para além disso, ao receber qualquer número Romano, este transdutor codifica-o.\\
 
-O transdutor 3 revela-se o mais desafiante, aplicando uma solução não determinista nos casos em que recebe um m ou um i. Decidimos construir o transdutor 3 de uma vez para uma solução mais eficiente, em vez de fazer a composição de vários transdutores mais pequenos que originariam uma solução final muito mais complexa.\\
+O transdutor 3 revelou-se o mais desafiante, aplicando uma solução não determinista nos casos em que recebe um M ou um I. Foi decidido construir o transdutor 3 de uma só vez para obter uma solução mais eficiente, em vez de fazer a composição de vários transdutores mais pequenos que originariam uma solução final muito mais complexa.\\
 
-O transdutor codificador é um simples compose entre os transdutor 1, 2 e 3 respectivamente, enquanto o transdutor descodificador resulta da inversão dos transdutores e respectivo compose pela ordem 3, 2 e 1.\\
+O transdutor codificador é um simples compose entre os transdutores 1, 2 e 3 respectivamente, enquanto o transdutor descodificador resulta da inversão dos transdutores e respectivo compose pela ordem 3, 2 e 1.\\
 
-O grupo optou, tal como aconselhado, a criar uma solução que parte de transdutores pequenos e simples para serem usados em transdutores mais complexos através da utilização das FSTools leccionadas, excepto quando julgou que não se justificaria.\\
+O grupo , tal como aconselhado, optiou por criar uma solução que parte da criação de transdutores pequenos e simples para serem usados em transdutores mais complexos através da utilização das FSTools leccionadas. Apenas foi aplicada uam estratégia diferente, quando o grupo considerou que esta solução não se justificaria.\\
 
 
 \end{document}
