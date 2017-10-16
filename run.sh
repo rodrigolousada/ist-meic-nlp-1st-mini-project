@@ -122,8 +122,8 @@ cp transducers/transducer2.fst    transdutor2.fst
 cp transducers/transducer2.pdf    transdutor2.pdf
 cp transducers/transducer3.fst    transdutor3.fst
 cp transducers/transducer3.pdf    transdutor3.pdf
-cp transducers/decodifier.fst     descodificador.fst
-cp transducers/decodifier.pdf     descodificador.pdf
+cp transducers/codifier.fst       codificador.fst
+cp transducers/codifier.pdf       codificador.pdf
 cp transducers/decodifier.fst     descodificador.fst
 cp transducers/decodifier.pdf     descodificador.pdf
 ##############################################################
