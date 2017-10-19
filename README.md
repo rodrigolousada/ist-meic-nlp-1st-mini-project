@@ -1,9 +1,15 @@
 # NLP-1st-Mini-Project
 Natural Language Processing 1st Mini Project
 
+**Work with: **
+ - Graphviz
+ - FSTOpen
+
 **Grupo 40:**
 - Sofia Aparício 81105
 - Rodrigo Lousada 81115
+
+**Grade:** 4/4
 
 **Explicação do funcionamento:**
 Existem 3 ficheiros que pode correr com o comando **sh**:
