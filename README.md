@@ -1,7 +1,7 @@
 # NLP-1st-Mini-Project
 Natural Language Processing 1st Mini Project
 
-**Work with: **
+**Work with:**
  - Graphviz
  - FSTOpen
 
@@ -11,13 +11,13 @@ Natural Language Processing 1st Mini Project
 
 **Grade:** 4/4
 
-**Explicação do funcionamento:**
+**Explicação do funcionamento:**  
 Existem 3 ficheiros que pode correr com o comando **sh**:
  - **run.sh** - Cria as pastas transducers, tests e transducers onde colocará todos os ficheiros gerados. No final copia os ficheiros referidos no enunciado para a pasta raiz com os nomes pedidos.
  - **tests.sh** - Gera mais testes que estarão na pasta tests com os respectivos resultados na pasta results
  - **clean.sh** - Limpa todos os ficheiros gerados
 
-**Descrição das Opções Tomadas:**
+**Descrição das Opções Tomadas:**  
 O grupo optou por começar a fazer o transdutor de Romanos para Decimais, sendo mais simples a implementação deste que depois seria invertido para obter o Transdutor Romanos. Simplificando mais ainda, começamos por desenvolver 4 transdutores, Referente ao zero, às unidades, às dezenas e ao numero 100. Estes quatro foram então concatenados e unidos de forma a obter um transdutor que contemplasse todos e somente os números de 1 a 100. 
 
 A necessidade de ter um transdutor apenas para o zero, deve-se ao facto do trandutor das unidades apenas poder contemplar o 0 caso já tenha sido lida uma dezena. Esta solução facilitaria-nos escalar assim a solução para o caso de aceitarmos numero de 0 a 999, evitar outputs como 00.
